@@ -48,7 +48,7 @@ def main(cfg: DictConfig):
         n_rays_per_image=cfg.raysampler.n_rays_per_image,
         min_depth=cfg.raysampler.min_depth,
         max_depth=cfg.raysampler.max_depth,
-        stratified=cfg.raysampler.stratified,
+        stratified=cfg.raysampler.stratified, #stratified?
         stratified_test=cfg.raysampler.stratified_test,
         chunk_size_test=cfg.raysampler.chunk_size_test,
         n_harmonic_functions_xyz=cfg.implicit_function.n_harmonic_functions_xyz,
@@ -85,7 +85,7 @@ def main(cfg: DictConfig):
             start_epoch = stats.epoch
 
     # Initialize the optimizer.
-    optimizer = torch.optim.Adam(
+    optimizer = torch.optim.Adam( #?
         model.parameters(),
         lr=cfg.optimizer.lr,
     )
